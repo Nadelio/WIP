@@ -30,6 +30,7 @@ public class Main extends JFrame
         // configure button settings
         button.setBackground(Color.DARK_GRAY);
         button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
 
         // configure label settings
         label.setForeground(Color.WHITE);
