@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class Main extends JFrame
 {
@@ -18,27 +18,29 @@ public class Main extends JFrame
     {
         // create components (label and button)
         JButton button = new JButton("Testing");
-        JLabel label = new JLabel("PlaceholderText");
+        JLabel label = new JLabel("PlaceholderText", SwingConstants.CENTER);
 
         // set the bounds of label and button
-        button.setBounds(400, 650, 200, 100);
-        label.setBounds(450, 400, 200, 100);
+        button.setBounds(660, 650, 200, 100);
+        label.setBounds(660, 400, 200, 100);
 
         // set layouts of panel and frame to null
         setLayout(null);
 
         // configure button settings
         button.setBackground(Color.DARK_GRAY);
-        button.setForeground(Color.WHITE);
+        button.setForeground(Color.GRAY);
         button.setFocusPainted(false);
 
         // configure label settings
-        label.setForeground(Color.WHITE);
+        label.setForeground(Color.GRAY);
+        label.setBackground(Color.DARK_GRAY);
+        label.setOpaque(true);
 
         // configure Frame settings
-        setSize(1000, 800);
+        setSize(1920, 1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(Color.GRAY);
         setTitle("Window and Interaction Prototype");
         setLocationRelativeTo(null);
         setVisible(true);
@@ -52,7 +54,7 @@ public class Main extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                label.setText("You did something!");
+                label.setText("<html>" + label.getText() + "<br>You did something!<html>");
             }
         });
     }
