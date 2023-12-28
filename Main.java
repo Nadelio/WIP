@@ -36,6 +36,7 @@ public class Main extends JFrame
         label.setForeground(Color.GRAY);
         label.setBackground(Color.DARK_GRAY);
         label.setOpaque(true);
+        label.setVerticalAlignment(SwingConstants.TOP);
 
         // configure Frame settings
         setSize(1920, 1080);
@@ -51,10 +52,19 @@ public class Main extends JFrame
 
         // setup an action listener to button
         button.addActionListener(new ActionListener(){
+            public int count = 0;
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                label.setText("<html>" + label.getText() + "<br>You did something!<html>");
+                if(count % 5 == 0)
+                {
+                    label.setText("<html> You did something! Line: " + count + "<html>");
+                }
+                else
+                {
+                    label.setText("<html>" + label.getText() + "<br>You did something! Line: " + count + "<html>");
+                }
+                count++;
             }
         });
     }
